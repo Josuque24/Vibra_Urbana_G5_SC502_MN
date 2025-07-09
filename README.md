@@ -8,7 +8,7 @@ El sitio web busca ampliar el alcance digital del emprendimiento y mejorar su co
 
 - **HTML5** – estructura del contenido
 - **CSS3** – diseño visual
-- **JavaScript** (por implementar) – interactividad
+- **JavaScript** – interactividad
 - **Visual Studio Code** – entorno de desarrollo
 
 ## 🧠 Funcionalidades previstas
@@ -17,9 +17,7 @@ El sitio web busca ampliar el alcance digital del emprendimiento y mejorar su co
 - Visualización de productos por categorías
 - Carrito de compras
 - Pasarela de pago (PayPal)
-- Página de contacto
-- Sección "Sobre nosotros"
-- Perfil de usuario editable
+- Páginas con información relacionada a la tienda.
 
 ## 👨‍💻 Integrantes del grupo
 
