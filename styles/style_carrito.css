@@ -1,0 +1,9 @@
+.cart-header {
+  background-color: #ff6b35 !important;
+  color: white !important;
+}
+
+.cart-header th {
+  border: none;
+  font-weight: 600;
+}
