@@ -9,7 +9,7 @@ CREATE TABLE cliente (
     nombre VARCHAR(50),
     apellido VARCHAR(50),
     usuario VARCHAR(50) UNIQUE,
-    contrasenia VARCHAR(250)
+    contrasenia VARCHAR(255)
 );
 
 -- Tabla categoria_producto
