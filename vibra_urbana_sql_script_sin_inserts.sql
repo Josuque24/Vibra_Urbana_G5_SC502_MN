@@ -35,6 +35,7 @@ CREATE TABLE producto (
     id_categoria INT,
     id_subcategoria INT,
     sexo char(1),
+    imagen VARCHAR(255), 
     FOREIGN KEY (id_categoria) REFERENCES categoria_producto(id_categoria),
     FOREIGN KEY (id_subcategoria) REFERENCES subcategoria_producto(id_subcategoria)
 );
