@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (!isset($_SESSION['usuario'] )) {
+    header("Location: ./login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,20 +17,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container">
-      <a class="navbar-brand" href="paginaprincipal.html">Vibra Urbana</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="paginaprincipal.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Ayuda</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <?php include("include/menu.php"); ?>
 
   <section class="container py-5">
     <h2 class="text-center mb-4">Contáctanos</h2>
