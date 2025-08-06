@@ -51,8 +51,8 @@ if (!isset($_SESSION['usuario'])) {
           <label for="contrasenia" class="form-label">Nueva Contraseña</label>
           <input type="password" class="form-control" id="contrasenia" placeholder="Nueva contraseña">
         </div>
-
-        <div class="col-12 text-end">
+        <div class="col-12 d-flex justify-content-between">
+          <button type="button" class="btn btn-danger" id="eliminar-cuenta">Eliminar cuenta</button>
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
       </form>

@@ -11,8 +11,26 @@ $(document).ready(function () {
         }
     });
 
+    // Eliminar cuenta con confirmación
+    $('#eliminar-cuenta').on('click', function () {
+        if (confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.')) {
+            $.ajax({
+                url: 'eliminar_usuario.php',
+                type: 'POST',
+                success: function () {
+                    alert('Tu cuenta ha sido eliminada.');
+                    window.location.href = 'login.php';
+                },
+                error: function () {
+                    alert('Error al eliminar la cuenta.');
+                }
+            });
+        }
+    });
+
+
     // Guardar cambios
-    $('#form-cuenta').submit(function (e) {   
+    $('#form-cuenta').submit(function (e) {
         e.preventDefault();
 
         const datos = {
