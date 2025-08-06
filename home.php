@@ -75,11 +75,10 @@ if (!isset($_SESSION['usuario'] )) {
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Vibra Urbana. Todos los derechos reservados.</p>
-  </footer>
+  <?php include("include/footer.php"); ?>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./javascript/navbar_script.js"></script>
+  <!--<script src="./javascript/navbar_script.js"></script>-->
 </body>
 
 </html>
