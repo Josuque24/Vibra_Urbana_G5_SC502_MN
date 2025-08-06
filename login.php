@@ -49,6 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Siempre buena vibra, siempre vibra urbana</p>
       </div>
       <form method="POST" action="login.php" class="p-4">
+        <?php if (!empty($mensaje)) : ?>
+          <div class="alert alert-danger"><?= $mensaje ?></div>
+        <?php endif; ?>
         <div class="mb-3">
           <label for="usuario" class="form-label">Usuario:</label>
           <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su usuario">
@@ -66,6 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+  <!--<script src="script.js"></script> -->
 </body>
 </html>
