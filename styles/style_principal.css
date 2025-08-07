@@ -55,3 +55,17 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+
+.custom-btn-naranja {
+  background-color: white;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.custom-btn-naranja:hover {
+  background-color: #ff6b35;
+  color: white;
+}

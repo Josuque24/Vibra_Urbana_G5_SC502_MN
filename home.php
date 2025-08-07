@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
-if (!isset($_SESSION['usuario'] )) {
-    header("Location: ./login.php");
-    exit();
+if (!isset($_SESSION['usuario'])) {
+  header("Location: ./login.php");
+  exit();
 }
 ?>
 
@@ -70,6 +70,9 @@ if (!isset($_SESSION['usuario'] )) {
               <a href="#" class="btn btn-outline-dark">Ver más</a>
             </div>
           </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="productos.php" class="btn btn-lg custom-btn-naranja">Ver más productos</a>
         </div>
       </div>
     </div>
