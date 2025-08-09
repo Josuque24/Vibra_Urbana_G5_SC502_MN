@@ -27,7 +27,7 @@ if (!isset($_SESSION['usuario'])) {
     <div class="container">
       <h1 class="mb-3">Moda Juvenil con Identidad</h1>
       <p class="lead mb-4">Explora nuestra colección sostenible, auténtica e inclusiva. ¡Vibra con estilo!</p>
-      <a href="#" class="btn btn-light btn-lg">Explorar Productos</a>
+      <a href="productos.php" class="btn btn-light btn-lg">Explorar Productos</a>
     </div>
   </section>
 

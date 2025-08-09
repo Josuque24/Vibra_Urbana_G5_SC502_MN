@@ -8,7 +8,7 @@ CREATE TABLE cliente (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     apellido VARCHAR(50),
-    usuario VARCHAR(50) UNIQUE,
+    usuario VARCHAR(120) UNIQUE,
     contrasenia VARCHAR(255)
 );
 

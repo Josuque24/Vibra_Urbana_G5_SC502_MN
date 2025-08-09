@@ -54,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
         <div class="mb-3">
           <label for="usuario" class="form-label">Usuario:</label>
-          <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su usuario">
+          <input type="email" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su email">
+          <div class="invalid-feedback">Ingresa un correo válido.</div>
         </div>
         
         <div class="mb-3">
