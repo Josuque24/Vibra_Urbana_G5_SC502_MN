@@ -25,22 +25,29 @@ if (!isset($_SESSION['usuario'] )) {
   <section class="py-5 bg-light">
     <div class="container text-center">
       <h2 class="mb-4">Seleccione</h2>
+
       <div class="row g-4 justify-content-center">
+        <!-- Card: Contáctenos -->
         <div class="col-md-4 col-sm-6 col-12">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a class="nav-link" href="Contacto.php"><h5 class="card-title">Contáctenos</h5></a>              
+              <h5 class="card-title mb-0">Contáctenos</h5>
+              <a href="Contacto.php" class="stretched-link" aria-label="Ir a Contáctenos"></a>
             </div>
           </div>
         </div>
+
+        <!-- Card: Preguntas frecuentes -->
         <div class="col-md-4 col-sm-6 col-12">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a class="nav-link" href="FaQ.php"><h5 class="card-title">Preguntas frecuentes</h5></a>              
+              <h5 class="card-title mb-0">Preguntas frecuentes</h5>
+              <a href="FaQ.php" class="stretched-link" aria-label="Ir a Preguntas frecuentes"></a>
             </div>
           </div>
-        </div>               
+        </div>
       </div>
+
     </div>
   </section>
 
