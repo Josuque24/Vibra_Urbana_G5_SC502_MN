@@ -79,6 +79,7 @@ function crc($n)
 </head>
 
 <body>
+  <main>
 
   <!-- Nav bar -->
   <?php include("include/menu.php"); ?>
@@ -164,9 +165,7 @@ function crc($n)
         data-has-items="<?= empty($items) ? '0' : '1' ?>"
         data-currency="USD"></div>
     </div>
-
-
-
+  </main>
 
     <?php include("include/footer.php"); ?>
 
