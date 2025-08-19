@@ -32,22 +32,14 @@ function cardHTML(p) {
         <div class="card-body d-flex flex-column">
           <h6 class="card-title mb-1">${p.nombre}</h6>
           <div class="mb-2 fw-bold">₡ ${precioFmt}</div>
-          <div class="mt-auto d-grid gap-2">
-            <button 
-              type="button" 
-              class="btn btn-outline-dark btn-ver" 
-              data-id="${p.id_producto}"
-              data-bs-toggle="modal" 
-              data-bs-target="#productoModal">
-              Ver
-            </button>
+          <div class="mt-auto d-grid gap-2">            
             <button 
               type="button" 
               class="btn btn-dark btn-ver" 
               data-id="${p.id_producto}"
               data-bs-toggle="modal" 
               data-bs-target="#productoModal">
-              Agregar
+              Ver más
             </button>
           </div>
         </div>
