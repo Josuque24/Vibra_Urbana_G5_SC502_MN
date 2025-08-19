@@ -207,8 +207,8 @@ INSERT INTO producto (nombre, descripcion, precio, id_categoria, id_subcategoria
 
 -- Accesorios - carteras (URLs de ejemplo)
 INSERT INTO producto (nombre, descripcion, precio, id_categoria, id_subcategoria, sexo, imagen) VALUES
-('Cartera Bandolera Pequeña', 'Cartera cruzada con correa ajustable', 32990.00, 2, 9, 'F', 'https://ejemplo.com/cartera-bandolera.jpg'),
-('Clutch Noche Dorado', 'Cartera de mano elegante para eventos formales', 28990.00, 2, 9, 'F', 'https://ejemplo.com/clutch-dorado.jpg');
+('Cartera Bandolera Pequeña', 'Cartera cruzada con correa ajustable', 32990.00, 2, 9, 'F', 'https://cdn.gacel.cl/42520-superlarge_default/cartera-bandolera-pequena-negro-1709697.jpg'),
+('Clutch Noche Dorado', 'Cartera de mano elegante para eventos formales', 28990.00, 2, 9, 'F', 'https://m.media-amazon.com/images/I/71hYPNC08OL._UY900_.jpg');
 
 -- Trajes de baño
 INSERT INTO producto (nombre, descripcion, precio, id_categoria, id_subcategoria, sexo, imagen) VALUES
