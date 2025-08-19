@@ -29,7 +29,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?cat=1" class="text-decoration-none text-dark">
+              <a href="productos.php?cat=1" class="text-decoration-none text-dark">
                 <h5 class="card-title">Ropa</h5>
               </a>
             </div>
@@ -39,7 +39,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?cat=2" class="text-decoration-none text-dark">
+              <a href="productos.php?cat=2" class="text-decoration-none text-dark">
                 <h5 class="card-title">Accesorios</h5>
               </a>
             </div>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?cat=3" class="text-decoration-none text-dark">
+              <a href="productos.php?cat=3" class="text-decoration-none text-dark">
                 <h5 class="card-title">Trajes de baño</h5>
               </a>
             </div>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?subcat=10" class="text-decoration-none text-dark">
+              <a href="productos.php?subcat=10" class="text-decoration-none text-dark">
                 <h5 class="card-title">Bikinis</h5>
               </a>
             </div>
@@ -70,7 +70,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?subcat=1" class="text-decoration-none text-dark">
+              <a href="productos.php?subcat=1" class="text-decoration-none text-dark">
                 <h5 class="card-title">Camisetas</h5>
               </a>
             </div>
@@ -80,7 +80,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?subcat=7" class="text-decoration-none text-dark">
+              <a href="productos.php?subcat=7" class="text-decoration-none text-dark">
                 <h5 class="card-title">Bolsos</h5>
               </a>
             </div>
@@ -90,7 +90,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?subcat=8" class="text-decoration-none text-dark">
+              <a href="productos.php?subcat=8" class="text-decoration-none text-dark">
                 <h5 class="card-title">Billeteras</h5>
               </a>
             </div>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="col-md-3 col-6">
           <div class="card categoria-card h-100">
             <div class="card-body">
-              <a href="vista_productos.php?subcat=9" class="text-decoration-none text-dark">
+              <a href="productos.php?subcat=9" class="text-decoration-none text-dark">
                 <h5 class="card-title">Carteras</h5>
               </a>
             </div>
