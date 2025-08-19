@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if (!isset($_SESSION['usuario'] )) {
+if (!isset($_SESSION['usuario'])) {
     header("Location: ./login.php");
     exit();
 }
@@ -18,74 +18,99 @@ if (!isset($_SESSION['usuario'] )) {
 <body>
 <main>
 
-  <!-- Navbar -->
   <?php include("include/menu.php"); ?>
 
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Categorías</h2>
+      <div class="row g-4">
 
-<!-- Categorías -->
-<section class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="mb-4">Categorías</h2>
-    <div class="row g-4">
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Niños</h5>
+        <!-- Categorías -->
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?cat=1" class="text-decoration-none text-dark">
+                <h5 class="card-title">Ropa</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Bikinis</h5>
+
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?cat=2" class="text-decoration-none text-dark">
+                <h5 class="card-title">Accesorios</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Oversize</h5>
+
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?cat=3" class="text-decoration-none text-dark">
+                <h5 class="card-title">Trajes de baño</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Accesorios</h5>
+
+        <!-- Subcategorías -->
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?subcat=10" class="text-decoration-none text-dark">
+                <h5 class="card-title">Bikinis</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ropa Zayin</h5>
+
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?subcat=1" class="text-decoration-none text-dark">
+                <h5 class="card-title">Camisetas</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ropa para Mujer</h5>
+
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?subcat=7" class="text-decoration-none text-dark">
+                <h5 class="card-title">Bolsos</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ropa para Hombre</h5>
+
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?subcat=8" class="text-decoration-none text-dark">
+                <h5 class="card-title">Billeteras</h5>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="card categoria-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Billeteras y Carteras</h5>
+
+        <div class="col-md-3 col-6">
+          <div class="card categoria-card h-100">
+            <div class="card-body">
+              <a href="vista_productos.php?subcat=9" class="text-decoration-none text-dark">
+                <h5 class="card-title">Carteras</h5>
+              </a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
 </main>
 
 <?php include("include/footer.php"); ?>
