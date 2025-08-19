@@ -27,82 +27,74 @@ if (!isset($_SESSION['usuario'])) {
 
         <!-- Categorías -->
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?cat=1" class="text-decoration-none text-dark">
-                <h5 class="card-title">Ropa</h5>
-              </a>
+              <h5 class="card-title mb-0">Ropa</h5>
+              <a href="productos.php?cat=1" class="stretched-link" aria-label="Ver productos de Ropa"></a>
             </div>
           </div>
         </div>
 
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?cat=2" class="text-decoration-none text-dark">
-                <h5 class="card-title">Accesorios</h5>
-              </a>
+              <h5 class="card-title mb-0">Accesorios</h5>
+              <a href="productos.php?cat=2" class="stretched-link" aria-label="Ver productos de Accesorios"></a>
             </div>
           </div>
         </div>
 
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?cat=3" class="text-decoration-none text-dark">
-                <h5 class="card-title">Trajes de baño</h5>
-              </a>
+              <h5 class="card-title mb-0">Trajes de baño</h5>
+              <a href="productos.php?cat=3" class="stretched-link" aria-label="Ver productos de Trajes de baño"></a>
             </div>
           </div>
         </div>
 
         <!-- Subcategorías -->
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?subcat=10" class="text-decoration-none text-dark">
-                <h5 class="card-title">Bikinis</h5>
-              </a>
+              <h5 class="card-title mb-0">Bikinis</h5>
+              <a href="productos.php?subcat=10" class="stretched-link" aria-label="Ver productos de Bikinis"></a>
             </div>
           </div>
         </div>
 
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?subcat=1" class="text-decoration-none text-dark">
-                <h5 class="card-title">Camisetas</h5>
-              </a>
+              <h5 class="card-title mb-0">Camisetas</h5>
+              <a href="productos.php?subcat=1" class="stretched-link" aria-label="Ver productos de Camisetas"></a>
             </div>
           </div>
         </div>
 
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?subcat=7" class="text-decoration-none text-dark">
-                <h5 class="card-title">Bolsos</h5>
-              </a>
+              <h5 class="card-title mb-0">Bolsos</h5>
+              <a href="productos.php?subcat=7" class="stretched-link" aria-label="Ver productos de Bolsos"></a>
             </div>
           </div>
         </div>
 
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?subcat=8" class="text-decoration-none text-dark">
-                <h5 class="card-title">Billeteras</h5>
-              </a>
+              <h5 class="card-title mb-0">Billeteras</h5>
+              <a href="productos.php?subcat=8" class="stretched-link" aria-label="Ver productos de Billeteras"></a>
             </div>
           </div>
         </div>
 
         <div class="col-md-3 col-6">
-          <div class="card categoria-card h-100">
+          <div class="card categoria-card h-100 position-relative">
             <div class="card-body">
-              <a href="productos.php?subcat=9" class="text-decoration-none text-dark">
-                <h5 class="card-title">Carteras</h5>
-              </a>
+              <h5 class="card-title mb-0">Carteras</h5>
+              <a href="productos.php?subcat=9" class="stretched-link" aria-label="Ver productos de Carteras"></a>
             </div>
           </div>
         </div>

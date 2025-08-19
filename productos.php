@@ -34,13 +34,16 @@ if (!isset($_SESSION['usuario'])) {
               value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q'], ENT_QUOTES, 'UTF-8') : ''; ?>"
               autocapitalize="off"
               autocomplete="off"
-              spellcheck="false" />            
+              spellcheck="false" />
             <button id="btn-busq" class="btn btn-dark" type="button">Buscar</button>
           </div>
         </div>
 
 
         <div id="grid-productos" class="row g-3"></div>
+        <div id="more-wrap" class="text-center mt-4 d-none">
+          <button id="btn-mas" class="btn btn-outline-dark" type="button">Mostrar más</button>
+        </div>
       </div>
     </section>
   </main>
