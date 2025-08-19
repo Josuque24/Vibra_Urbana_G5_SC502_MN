@@ -1,81 +1,79 @@
 <?php
+// carrito_agregar.php
 session_start();
-require_once("include/conexion.php");
+require_once __DIR__ . '/include/conexion.php';
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['id_cliente'])) {
-    header("Location: ./login.php");
-    exit();
+  http_response_code(401);
+  exit('Debes iniciar sesión');
 }
 
-$id_cliente = $_SESSION['id_cliente'];
-$nombre = $_POST['nombre'] ?? '';
-$precio = $_POST['precio'] ?? 0;
-$id_talla = $_POST['id_talla'] ?? 0;
-$cantidad = $_POST['cantidad'] ?? 1;
+$id_cliente  = (int) $_SESSION['id_cliente'];
+$id_producto = (int) ($_POST['id_producto'] ?? 0);
+$id_talla    = isset($_POST['id_talla']) ? (int)$_POST['id_talla'] : 0; // NOT NULL en tu PK
+$cantidad    = max(1, (int) ($_POST['cantidad'] ?? 1));
 
-if (empty($nombre) || $precio <= 0 || $id_talla <= 0 || $cantidad <= 0) {
-    echo "Error: Datos incompletos.";
-    exit();
+if ($id_producto <= 0 || $id_talla <= 0) {
+  http_response_code(400);
+  exit('Producto o talla inválida.');
 }
 
-// Buscar el carrito del cliente
-$stmt = $mysqli->prepare("SELECT id_carrito FROM carrito WHERE id_cliente = ?");
-$stmt->bind_param("i", $id_cliente);
+// Validar que el producto exista
+$stmt = $mysqli->prepare("SELECT 1 FROM producto WHERE id_producto = ?");
+$stmt->bind_param('i', $id_producto);
 $stmt->execute();
-$stmt->bind_result($id_carrito);
-if (!$stmt->fetch()) {
-    $stmt->close();
-    // Crear un nuevo carrito
-    $ins = $mysqli->prepare("INSERT INTO carrito (id_cliente) VALUES (?)");
-    $ins->bind_param("i", $id_cliente);
-    $ins->execute();
-    $id_carrito = $ins->insert_id;
-    $ins->close();
-} else {
-    $stmt->close();
+if (!$stmt->get_result()->fetch_row()) {
+  http_response_code(404);
+  exit('Producto no existe');
+}
+$stmt->close();
+
+// Validar talla y stock (si existe producto_talla)
+$hasPT = $mysqli->query("SHOW TABLES LIKE 'producto_talla'");
+if ($hasPT && $hasPT->num_rows > 0) {
+  $st = $mysqli->prepare("SELECT cantidad_disponible FROM producto_talla WHERE id_producto=? AND id_talla=?");
+  $st->bind_param('ii', $id_producto, $id_talla);
+  $st->execute();
+  $st->bind_result($stock);
+  if (!$st->fetch()) { http_response_code(400); exit('Talla inválida para este producto'); }
+  if ((int)$stock < $cantidad) { http_response_code(400); exit('Stock insuficiente'); }
+  $st->close();
 }
 
-// Busca el producto en la base de datos 
-$stmt = $mysqli->prepare("SELECT id_producto FROM producto WHERE nombre = ? AND precio = ?");
-$stmt->bind_param("sd", $nombre, $precio);
-$stmt->execute();
-$stmt->bind_result($id_producto);
-if (!$stmt->fetch()) {
-    
-    $stmt->close();
-    $ins = $mysqli->prepare("INSERT INTO producto (nombre, precio, imagen) VALUES (?, ?, ?)");
-    $imagen = ''; 
-    $ins->bind_param("sds", $nombre, $precio, $imagen);
-    $ins->execute();
-    $id_producto = $ins->insert_id;
-    $ins->close();
+// Buscar carrito del cliente o crearlo
+$q = $mysqli->prepare("SELECT id_carrito FROM carrito WHERE id_cliente = ? LIMIT 1");
+$q->bind_param('i', $id_cliente);
+$q->execute();
+$q->bind_result($id_carrito);
+if (!$q->fetch()) {
+  $q->close();
+  $ins = $mysqli->prepare("INSERT INTO carrito (id_cliente) VALUES (?)");
+  $ins->bind_param('i', $id_cliente);
+  $ins->execute();
+  $id_carrito = $ins->insert_id;
+  $ins->close();
 } else {
-    $stmt->close();
+  $q->close();
 }
 
-// Verifica si el producto ya esta en el carrito
-$stmt = $mysqli->prepare("SELECT cantidad FROM carrito_detalle WHERE id_carrito = ? AND id_producto = ? AND id_talla = ?");
-$stmt->bind_param("iii", $id_carrito, $id_producto, $id_talla);
-$stmt->execute();
-$stmt->bind_result($cantidad_existente);
-if ($stmt->fetch()) {
-    // Si ya esta en el carrito, actualiza la cantidad
-    $stmt->close();
-    $nueva_cantidad = $cantidad_existente + $cantidad;
-    $upd = $mysqli->prepare("UPDATE carrito_detalle SET cantidad = ? WHERE id_carrito = ? AND id_producto = ? AND id_talla = ?");
-    $upd->bind_param("iiii", $nueva_cantidad, $id_carrito, $id_producto, $id_talla);
-    $upd->execute();
-    $upd->close();
+// ¿Ya existe la línea? (PK compuesta en tu esquema)
+$sel = $mysqli->prepare("SELECT cantidad FROM carrito_detalle WHERE id_carrito=? AND id_producto=? AND id_talla=?");
+$sel->bind_param('iii', $id_carrito, $id_producto, $id_talla);
+$sel->execute();
+$sel->bind_result($cant_actual);
+
+if ($sel->fetch()) {
+  $sel->close();
+  $upd = $mysqli->prepare("UPDATE carrito_detalle SET cantidad = cantidad + ? WHERE id_carrito=? AND id_producto=? AND id_talla=?");
+  $upd->bind_param('iiii', $cantidad, $id_carrito, $id_producto, $id_talla);
+  $upd->execute();
+  $upd->close();
 } else {
-    $stmt->close();
-    $ins = $mysqli->prepare("INSERT INTO carrito_detalle (id_carrito, id_producto, id_talla, cantidad) VALUES (?, ?, ?, ?)");
-    $ins->bind_param("iiii", $id_carrito, $id_producto, $id_talla, $cantidad);
-    $ins->execute();
-    $ins->close();
+  $sel->close();
+  $insd = $mysqli->prepare("INSERT INTO carrito_detalle (id_carrito,id_producto,id_talla,cantidad) VALUES (?,?,?,?)");
+  $insd->bind_param('iiii', $id_carrito, $id_producto, $id_talla, $cantidad);
+  $insd->execute();
+  $insd->close();
 }
 
-
-echo "Producto agregado al carrito correctamente.";
-header("Location: carrito.php"); 
-exit();
-?>
+echo 'OK';
