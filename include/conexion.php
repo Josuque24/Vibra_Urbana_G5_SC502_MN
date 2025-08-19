@@ -2,7 +2,8 @@
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $host = 'localhost';
 $usuario = 'root';
-$contrasenia = 'emilyL2006';
+//$contrasenia = 'emilyL2006';
+$contrasenia = '24457285';
 $base_datos = 'vibra_urbana';
 
 $mysqli = new mysqli($host,$usuario,$contrasenia,$base_datos);
