@@ -1,5 +1,4 @@
 <?php
-// carrito_agregar.php
 session_start();
 require_once __DIR__ . '/include/conexion.php';
 
@@ -56,7 +55,7 @@ if (!$q->fetch()) {
   $q->close();
 }
 
-// ¿Ya existe la línea? (PK compuesta en tu esquema)
+
 $sel = $mysqli->prepare("SELECT cantidad FROM carrito_detalle WHERE id_carrito=? AND id_producto=? AND id_talla=?");
 $sel->bind_param('iii', $id_carrito, $id_producto, $id_talla);
 $sel->execute();

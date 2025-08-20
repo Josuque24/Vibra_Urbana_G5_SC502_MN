@@ -10,11 +10,8 @@ if (!isset($_SESSION['usuario'])) {
 <head>
   <meta charset="UTF-8">
   <title>Vibra Urbana - Inicio</title>
-  <!-- Bootstrap CSS (mantenemos 5.3.0 como tenías) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos -->
-  <link rel="stylesheet" href="styles/style_principal.css">
-  <!-- style_modal.css removido para evitar conflictos con el modal de Bootstrap -->
+  <link rel="stylesheet" href="styles/style_principal.css"> 
 </head>
 <body>
   <main>
@@ -30,7 +27,7 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </section>
 
-    <!-- Productos Recomendados (3 aleatorios) -->
+    <!-- Productos Recomendados (3 aleatorios) traido desde el js -->
     <section class="py-5">
       <div class="container">
         <h2 class="mb-3 text-center">Recomendados</h2>
@@ -82,7 +79,6 @@ if (!isset($_SESSION['usuario'])) {
 
   <!-- Bootstrap bundle (JS + Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Lógica de Home: carga 3 productos aleatorios, abre modal y agrega al carrito -->
   <script src="javascript/home.js"></script>
 </body>
 </html>

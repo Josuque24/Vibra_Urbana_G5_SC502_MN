@@ -5,7 +5,7 @@ require_once("include/paypal_config.php");
 
 header('Content-Type: application/json; charset=utf-8');
 
-// 1) Seguridad básica: debe estar logueado
+// 1) Seguridad básica
 if (!isset($_SESSION['id_cliente'])) {
     http_response_code(403);
     echo json_encode(["error" => "No autorizado"]);
@@ -73,7 +73,7 @@ curl_setopt_array($ch, [
         "Authorization: Bearer " . $accessToken
     ],
     CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => "{}", // Body vacío, pero debe ser POST
+    CURLOPT_POSTFIELDS => "{}", 
     CURLOPT_RETURNTRANSFER => true,
 ]);
 $captureResponse = curl_exec($ch);
@@ -97,7 +97,7 @@ if ($httpCode < 200 || $httpCode >= 300) {
 // 5) Procesar JSON de PayPal
 $data = json_decode($captureResponse, true);
 
-// Campos útiles
+
 $status       = $data['status'] ?? '';
 $order_id     = $data['id'] ?? '';
 $captureNode  = $data['purchase_units'][0]['payments']['captures'][0] ?? [];
@@ -111,10 +111,10 @@ $payer_name   = trim(($data['payer']['name']['given_name'] ?? '') . ' ' . ($data
 
 // 6) Si la captura fue exitosa
 if ($status === 'COMPLETED') {
-    // Guardar solo el total para "gracias.php"
+    
     $_SESSION['paypal_total_paid'] = number_format((float)$amountValue, 2, '.', ',') . ' ' . $currency;
 
-    // (Opcional) Si quieres mostrar más datos en "gracias.php", puedes guardar un recibo completo:
+    
     $_SESSION['paypal_receipt'] = [
         'status'      => $status,
         'order_id'    => $order_id,
@@ -127,8 +127,7 @@ if ($status === 'COMPLETED') {
         'update_time' => $updateTime,
     ];
 
-    // (Opcional, activado) Limpiar carrito del usuario
-    // Si prefieres limpiar sólo tras guardar una orden en BD, mueve esto al flujo de creación de orden.
+    
     // Buscar id_carrito
     $idCarrito = null;
     $sc = $mysqli->prepare("SELECT id_carrito FROM carrito WHERE id_cliente = ?");
@@ -145,10 +144,9 @@ if ($status === 'COMPLETED') {
         $del->close();
     }
 
-    // Devolver respuesta mínima esperada por onApprove (JS)
+    // Devolver respuesta esperada por onApprove on JS
     echo json_encode([
-        "status" => "COMPLETED",
-        // Si más adelante guardas orden en BD, agrega aquí: "orden_id" => $idOrden
+        "status" => "COMPLETED",        
     ]);
     exit();
 }

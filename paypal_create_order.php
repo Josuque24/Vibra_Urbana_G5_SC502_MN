@@ -97,4 +97,4 @@ if ($orderResponse === false) {
 }
 curl_close($ch);
 
-echo $orderResponse; // Devuelve JSON con {id: "...", status: "...", ...}
+echo $orderResponse; 

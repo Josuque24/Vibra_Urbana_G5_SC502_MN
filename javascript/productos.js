@@ -1,5 +1,3 @@
-// javascript/productos.js — modal + buscador (X nativa) + "Mostrar más" con paginación
-
 // ===== Utilidades AJAX =====
 async function fetchJSON(url, opts = {}) {
   const r = await fetch(url, { credentials: 'same-origin', ...opts });
@@ -50,7 +48,7 @@ function cardHTML(p) {
 // ===== Estado de paginación =====
 const State = {
   page: 1,
-  size: 12,           // ajusta aquí si quieres más por página
+  size: 12,           
   loading: false,
   done: false,
   params: {},         // últimos filtros (cat, subcat, q)
@@ -160,7 +158,7 @@ async function onOpenClick(btn) {
 async function addToCart(id, tallaId, cantidad) {
   const form = new FormData();
   form.append('id_producto', id);
-  form.append('id_talla', tallaId); // requerido por tu esquema
+  form.append('id_talla', tallaId); 
   form.append('cantidad', cantidad);
 
   const r = await fetch('carrito_agregar.php', { method: 'POST', body: form, credentials: 'same-origin' });

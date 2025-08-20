@@ -81,7 +81,7 @@ if (!isset($_SESSION['usuario'])) {
 
   <?php include("include/footer.php"); ?>
 
-  <!-- Bootstrap bundle (con Popper). Cárgalo ANTES de tu JS -->
+  <!-- Bootstrap bundle (con Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-4CMFba5+JXkH8h6jvQ2qXj0dP5C9V2i2qTqk5xv5Xg8qM1E8A2T+6Zp6o2f2bQ7H"
     crossorigin="anonymous"></script>

@@ -62,7 +62,7 @@ if ($idCarrito) {
 
 function crc($n)
 {
-  // ₡12,000
+  // ₡12,000 ejemplo formato
   return '₡' . number_format((float)$n, 0, ',', '.');
 }
 ?>
@@ -118,13 +118,12 @@ function crc($n)
                 if ($img === '') {
                   $src = "assets/img/placeholder.png";
                 }
-                // Si es una URL completa (http/https), úsala tal cual
+                //  URL completa (http/https)
                 elseif (preg_match('~^https?://~i', $img)) {
                   $src = $img;
                 }
-                // Si no, trátala como archivo local dentro de assets/img
+                // archivo local dentro de assets/img
                 else {
-                  // Si tu BD podría tener espacios en nombres de archivo:
                   $img = str_replace(' ', '%20', $img);
                   $src = "assets/img/{$img}";
                 }
