@@ -29,6 +29,7 @@ unset($_SESSION['paypal_total_paid']);
         Gracias por tu compra en <strong>Vibra Urbana</strong> por un total de
         <strong><?= htmlspecialchars($totalPaypal) ?></strong>.
       </p>
+      <p>Nuestros colaboradores se pondrán en contacto por email contigo para definir la entrega.</p>
     <?php else: ?>
       <p class="lead">
         Gracias por tu compra en <strong>Vibra Urbana</strong>.
