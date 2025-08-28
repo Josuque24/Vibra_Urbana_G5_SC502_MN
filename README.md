@@ -26,3 +26,8 @@ El sitio web busca ampliar el alcance digital del emprendimiento y mejorar su co
 - Emily Loria Madrigal
 - Jan Josué Quesada Ramírez
 
+
+## Instrucciones para correr
+
+Se levanta con XAMPP usando en un motor de busqueda web como google, poniendo la direccion de htdocs donde se guardo el proyecto.
+La base de datos debe haberse creado con antelacion en mysql y las credenciales deben de cambiarse en la configuracionde la conexion del proyecto.
